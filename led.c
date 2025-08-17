@@ -1,7 +1,6 @@
 #include "led.h"
 #include <stdio.h>
 
-// On simule l'état de la LED (0 = éteinte, 1 = allumée)
 static uint8_t led_state = 0;
 
 void LED_Init(void) {
@@ -22,4 +21,8 @@ void LED_Off(void) {
 void LED_Toggle(void) {
     led_state = !led_state;
     printf("LED toggled -> Etat = %s\n", led_state ? "ON" : "OFF");
+}
+
+uint8_t LED_GetState(void) {
+    return led_state;
 }
